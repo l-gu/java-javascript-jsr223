@@ -55,11 +55,16 @@ public class JavaScriptFunctions {
 		} catch (ScriptException e1) {
 			throw new RuntimeException("Error in function '" + functionName + "' (ScriptException)", e1) ;
 		}
-		return (String) result ;
+		return result ;
 	}
 
 	public String getEntityName(String tableName) {
 		Object[] args = {tableName};
 		return (String) invokeFuncion("getEntityName", args);
+	}
+
+	public boolean isOK(String tableName) {
+		Object[] args = {tableName};
+		return (Boolean) invokeFuncion("isOK", args);
 	}
 }
